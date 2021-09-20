@@ -9,6 +9,6 @@ const msg = ref('hello, world')
 
 <style lang="css" scoped>
 .title {
-  @apply text-center;
+  @apply text-center text-gray-600;
 }
 </style>
