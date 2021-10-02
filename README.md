@@ -1,5 +1,11 @@
 # Ch3cknull's Vue 3 Template
 
+My Vue3 Template
+
+## Feature
+
+1. PWA support (use vite-plugin-pwa)
+
 ## used(sort by name)
 
 - TypeScript
