@@ -2,15 +2,16 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import WindiCSS from 'vite-plugin-windicss'
 import { VitePWA } from 'vite-plugin-pwa'
-import VitePluginComponents, { ElementPlusResolver } from 'vite-plugin-components'
+import Component from 'unplugin-vue-components/vite'
+import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
     vue(),
     WindiCSS(),
-    VitePluginComponents({
-      customComponentResolvers: [ElementPlusResolver()],
+    Component({
+      resolvers: [ElementPlusResolver()],
     }),
     VitePWA({
       base: '/',
@@ -56,5 +57,8 @@ export default defineConfig({
   ],
   resolve: {
     alias: [{ find: '@', replacement: '/src' }],
+  },
+  build: {
+    cssCodeSplit: false,
   },
 })
